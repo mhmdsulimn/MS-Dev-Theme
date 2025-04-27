@@ -1,0 +1,49 @@
+==============================
+            MIT License
+==============================
+
+Copyright (c) 2025 Mohamed Suliman
+
+Permission is hereby granted, free of charge, to any person obtaining a copy  
+of this software and associated documentation files (the "Software"), to deal  
+in the Software without restriction, including without limitation the rights  
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
+copies of the Software, and to permit persons to whom the Software is  
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all  
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+SOFTWARE.
+
+------------------------------------------------------------
+
+==============================
+       رخصة MIT - العربية
+==============================
+
+حقوق النشر (c) 2025 محمد سليمان
+
+يُمنح الإذن بموجب هذه الوثيقة، مجانًا، لأي شخص يحصل على نسخة  
+من هذا البرنامج وملفات التوثيق الخاصة به ("البرنامج") للتعامل  
+مع البرنامج دون أي قيود، بما في ذلك ودون حصر الحقوق في استخدام،  
+نسخ، تعديل، دمج، نشر، توزيع، ترخيص من الباطن، و/أو بيع نسخ من  
+البرنامج، وأيضًا السماح للأشخاص الذين تم تزويدهم بالبرنامج  
+بالقيام بذلك، وذلك وفقًا للشروط التالية:
+
+يجب تضمين إشعار حقوق النشر أعلاه وهذا الإشعار بالإذن في جميع  
+نسخ أو أجزاء كبيرة من البرنامج.
+
+يتم توفير هذا البرنامج "كما هو"، دون أي ضمان من أي نوع، سواء  
+كان صريحًا أو ضمنيًا، بما في ذلك على سبيل المثال لا الحصر  
+الضمانات الخاصة بصلاحية البيع، أو الملاءمة لغرض معين، أو عدم  
+الانتهاك. لا يتحمل المؤلفون أو أصحاب حقوق النشر أي مسؤولية عن  
+أي مطالبة، أو ضرر، أو مسؤولية أخرى، سواء في إجراء تعاقدي،  
+أو ضرر مدني، أو غير ذلك، ناتج عن أو متعلق باستخدام البرنامج  
+أو أي تعاملات أخرى في البرنامج.
