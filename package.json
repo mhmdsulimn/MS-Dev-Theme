@@ -1,0 +1,88 @@
+{
+	"name": "msdev-vscode",
+	"displayName": "MS Dev Theme",
+	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman",
+	"version": "1.2.0",
+	"author": "Mohamed Suliman",
+	"publisher": "mhmdsulimn",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mhmdsulimn/MS-Dev-Theme"
+	},
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"extensionKind": [
+		"ui"
+	],
+	"keywords": [
+		"Mohamed Suliman",
+		"mhmdsulimn",
+		"MS Dev",
+		"icon",
+		"icons",
+		"theme"
+	],
+	"categories": [
+		"Themes"
+	],
+	"activationEvents": [
+		"onCommand:msdevtheme.enableNeon",
+		"onCommand:msdevtheme.disableNeon"
+	],
+	"main": "./src/extension.js",
+	"browser": "./src/extension.js",
+	"contributes": {
+		"themes": [
+			{
+				"label": "MS Dev Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/msdev-color-theme.json"
+			}
+		],
+		"iconThemes": [
+			{
+				"id": "MS Dev File Icon",
+				"label": "MS Dev File Icon",
+				"path": "./themes/msdev-file-icon.json"
+			}
+		],
+		"productIconThemes": [
+			{
+				"id": "MS Dev Product Icon",
+				"label": "MS Dev Product Icon",
+				"path": "./themes/msdev-product-icon.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "msdevtheme.enableNeon",
+				"title": "MS Dev Theme: Enable Neon Dreams"
+			},
+			{
+				"command": "msdevtheme.disableNeon",
+				"title": "MS Dev Theme: Disable Neon Dreams"
+			}
+		],
+		"configuration": {
+			"title": "MS Dev Theme",
+			"properties": {
+				"msdevtheme.brightness": {
+					"type": "number",
+					"default": 0.45,
+					"description": "Set the brightness value for the glow effect. 0.0 is fully transparent and 1.0 is fully bright"
+				},
+				"msdevtheme.disableGlow": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable the glow effect, but show MS Dev Theme editor chrome updates"
+				}
+			}
+		}
+	},
+	"__metadata": {
+		"installedTimestamp": 1741729120465,
+		"size": 754628
+	}
+}
