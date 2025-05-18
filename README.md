@@ -12,7 +12,7 @@ If your eyes are exhausted from hours of coding and other themes just don't cut 
 
 <img src="https://img.shields.io/badge/Egypt-=?style=for-the-badge&colorA=222832&colorB=373277&label=made%20in">
 
-<img src="https://img.shields.io/visual-studio-marketplace/i/mhmdsulimn.msdev-vscode?style=for-the-badge&colorA=222832&colorB=373277&label=Installs">
+<img src="https://img.shields.io/visual-studio-marketplace/i/mhmdsulimn.msdev-vscode?style=for-the-badge&colorA=222832&colorB=373277">
 
 </div>
 
