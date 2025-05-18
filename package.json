@@ -2,7 +2,7 @@
 	"name": "msdev-vscode",
 	"displayName": "MS Dev Theme",
 	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"author": "Mohamed Suliman",
 	"publisher": "mhmdsulimn",
 	"icon": "icon.png",
@@ -43,15 +43,15 @@
 		],
 		"iconThemes": [
 			{
-				"id": "MS Dev File Icon",
-				"label": "MS Dev File Icon",
+				"id": "ms-dev-file-icon",
+				"label": "MS Dev Icons",
 				"path": "./themes/msdev-file-icon.json"
 			}
 		],
 		"productIconThemes": [
 			{
-				"id": "MS Dev Product Icon",
-				"label": "MS Dev Product Icon",
+				"id": "ms-dev-product-icon",
+				"label": "MS Dev Icons",
 				"path": "./themes/msdev-product-icon.json"
 			}
 		],
