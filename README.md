@@ -36,8 +36,8 @@ If your eyes are exhausted from hours of coding and other themes just don't cut 
 2. Search for **MS Dev Theme** by **Mohamed Suliman**
 3.  Click the **Install** button 
 4. Open the Command Palette (`Ctrl+Shift+P`), type `Color Theme`, and select **MS Dev Theme**
-5. To enable the file icon theme, open the Command Palette again, type `File Icon Theme`, and select **MS Dev Icons**
-6. To apply the product icon theme, open the Command Palette, type `Product Icon Theme`, and select **MS Dev Icons**
+5. To enable the file icon theme, open the Command Palette (`Ctrl+Shift+P`), type `File Icon Theme`, and select **MS Dev Icons**
+6. To apply the product icon theme, open the Command Palette (`Ctrl+Shift+P`), type `Product Icon Theme`, and select **MS Dev Icons**
 
 ---
 
