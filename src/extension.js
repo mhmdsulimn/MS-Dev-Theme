@@ -1,144 +1,123 @@
+const vscode = require('vscode');
 const path = require('path');
 const fs = require('fs');
-const vscode = require('vscode');
+
+// مفاتيح لتخزين الحالة في globalState
+const INSTALLED_BEFORE_KEY = 'msDevTheme.installedBefore'; // لمعرفة إذا تم التثبيت مسبقًا
+const LAST_VERSION_KEY = 'msDevTheme.lastVersionShown';   // لتخزين آخر إصدار تم عرض "What's New" له
+
+/**
+ * يعرض ملف Markdown في نافذة معاينة.
+ * @param {vscode.ExtensionContext} context سياق الإضافة.
+ * @param {string} mdFileName اسم ملف Markdown (مثل 'WHATS_NEW.md').
+ * @param {string} viewColumn العمود الذي ستظهر فيه المعاينة (اختياري).
+ */
+async function showMarkdownPreview(context, mdFileName, viewColumn = vscode.ViewColumn.One) {
+    const filePath = path.join(context.extensionPath, mdFileName);
+
+    if (!fs.existsSync(filePath)) {
+        vscode.window.showErrorMessage(`MS Dev Theme: Could not find the file ${mdFileName}`);
+        return;
+    }
+
+    // استبدال ${EXTPATH} بالمسار الفعلي للإضافة لتعمل الروابط الداخلية بشكل صحيح
+    let content = fs.readFileSync(filePath, 'utf8');
+    const extensionUri = vscode.Uri.file(context.extensionPath);
+    content = content.replace(/\$\{EXTPATH\}/g, extensionUri.toString());
+
+    // إنشاء ملف مؤقت لعرضه. هذا ضروري لضمان عمل الروابط التي تعتمد على مسار الإضافة.
+    // يمكن استخدام Webview API لعرض أكثر تقدماً، ولكن هذا أبسط.
+    const tempDir = context.globalStorageUri.fsPath;
+    if (!fs.existsSync(tempDir)) {
+        try {
+            fs.mkdirSync(tempDir, { recursive: true });
+        } catch (err) {
+            console.error("MS Dev Theme: Failed to create globalStorageUri directory:", err);
+            vscode.window.showErrorMessage("MS Dev Theme: Failed to create temporary directory for showing content.");
+            // كحل بديل، يمكن محاولة عرض الملف الأصلي مباشرة ولكن الروابط ${EXTPATH} قد لا تعمل
+            const originalFileUri = vscode.Uri.file(filePath);
+            vscode.commands.executeCommand('markdown.showPreview', originalFileUri, viewColumn);
+            return;
+        }
+    }
+
+    const tempFileName = `ms_dev_theme_temp_${mdFileName}`;
+    const tempFilePath = path.join(tempDir, tempFileName);
+
+    try {
+        fs.writeFileSync(tempFilePath, content);
+        const tempFileUri = vscode.Uri.file(tempFilePath);
+        await vscode.commands.executeCommand('markdown.showPreview', tempFileUri, viewColumn);
+    } catch (err) {
+        console.error(`MS Dev Theme: Failed to write or show temp markdown file ${tempFileName}:`, err);
+        vscode.window.showErrorMessage(`MS Dev Theme: Could not display ${mdFileName}.`);
+        // كحل بديل في حالة فشل الكتابة/العرض للملف المؤقت
+        const originalFileUri = vscode.Uri.file(filePath);
+        vscode.commands.executeCommand('markdown.showPreview', originalFileUri, viewColumn);
+    }
+}
+
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	this.extensionName = 'MohamedSuliman.msdevtheme-vscode';
-	this.cntx = context;
-	
-	const config = vscode.workspace.getConfiguration("msdevtheme");
+    console.log('MS Dev Theme is now active!');
 
-	let disableGlow = config && config.disableGlow ? !!config.disableGlow : false;
-	
-	let brightness = parseFloat(config.brightness) > 1 ? 1 : parseFloat(config.brightness);
-	brightness = brightness < 0 ? 0 : brightness;
-	brightness = isNaN(brightness) ? 0.45 : brightness;
+    const currentVersion = context.extension.packageJSON.version;
+    const lastVersionShown = context.globalState.get(LAST_VERSION_KEY);
+    const installedBefore = context.globalState.get(INSTALLED_BEFORE_KEY);
 
-	const parsedBrightness = Math.floor(brightness * 255).toString(16).toUpperCase();
-	let neonBrightness = parsedBrightness;
+    // تأخير بسيط لإعطاء VS Code فرصة للتحميل الكامل قبل عرض أي نوافذ
+    setTimeout(async () => {
+        if (!installedBefore) {
+            // هذا هو التثبيت الأول للإضافة
+            console.log('MS Dev Theme: First install detected. Showing Thank You page.');
+            await showMarkdownPreview(context, 'THANK_YOU.md', vscode.ViewColumn.One);
+            await context.globalState.update(INSTALLED_BEFORE_KEY, true);
+            await context.globalState.update(LAST_VERSION_KEY, currentVersion);
+        } else if (lastVersionShown !== currentVersion) {
+            // تم تحديث الإضافة إلى إصدار جديد
+            console.log(`MS Dev Theme: Update detected from ${lastVersionShown} to ${currentVersion}. Showing What's New page.`);
+            await showMarkdownPreview(context, 'WHATS_NEW.md', vscode.ViewColumn.One);
+            await context.globalState.update(LAST_VERSION_KEY, currentVersion);
+        }
+    }, 100);
 
-	let disposable = vscode.commands.registerCommand('msdevtheme.enableNeon', function () {
+    // تسجيل الأوامر لتكون متاحة من لوحة الأوامر
+    let showWhatsNewDisposable = vscode.commands.registerCommand('msdevtheme.showWhatsNew', async () => {
+        await showMarkdownPreview(context, 'WHATS_NEW.md');
+    });
+    context.subscriptions.push(showWhatsNewDisposable);
 
-		const appDir = path.dirname(vscode.env.appRoot);
-		const base = path.join(appDir,'app','out','vs','code');
-		const electronBase = isVSCodeBelowVersion("1.70.0") ? "electron-browser" : "electron-sandbox";
-		const workBenchFilename = vscode.version == "1.94.0" ? "workbench.esm.html" : "workbench.html";
+    let showThankYouDisposable = vscode.commands.registerCommand('msdevtheme.showThankYouPage', async () => {
+        await showMarkdownPreview(context, 'THANK_YOU.md');
+    });
+    context.subscriptions.push(showThankYouDisposable);
 
-		const htmlFile = path.join(base, electronBase, "workbench", workBenchFilename);
-		const templateFile = path.join(base, electronBase, "workbench", "neondreams.js");
 
-		try {
-
-			// const version = context.globalState.get(`${context.extensionName}.version`);
-
-			// generate production theme JS
-			const chromeStyles = fs.readFileSync(__dirname +'/css/editor_chrome.css', 'utf-8');
-			const jsTemplate = fs.readFileSync(__dirname +'/js/theme_template.js', 'utf-8');
-			const themeWithGlow = jsTemplate.replace(/\[DISABLE_GLOW\]/g, disableGlow);
-			const themeWithChrome = themeWithGlow.replace(/\[CHROME_STYLES\]/g, chromeStyles);
-			const finalTheme = themeWithChrome.replace(/\[NEON_BRIGHTNESS\]/g, neonBrightness);
-			fs.writeFileSync(templateFile, finalTheme, "utf-8");
-			
-			// modify workbench html
-			const html = fs.readFileSync(htmlFile, "utf-8");
-
-			// check if the tag is already there
-			const isEnabled = html.includes("neondreams.js");
-
-			if (!isEnabled) {
-				// delete msdevtheme script tag if there
-				let output = html.replace(/^.*(<!-- MS Dev Theme --><script src="neondreams.js"><\/script><!-- NEON DREAMS -->).*\n?/mg, '');
-				// add script tag
-				output = html.replace(/\<\/html\>/g, `	<!-- MS Dev Theme --><script src="neondreams.js"></script><!-- NEON DREAMS -->\n`);
-				output += '</html>';
-	
-				fs.writeFileSync(htmlFile, output, "utf-8");
-				
-				vscode.window
-					.showInformationMessage("Neon Dreams enabled. VS code must reload for this change to take effect. Code may display a warning that it is corrupted, this is normal. You can dismiss this message by choosing 'Don't show this again' on the notification.", { title: "Restart editor to complete" })
-					.then(function(msg) {
-						vscode.commands.executeCommand("workbench.action.reloadWindow");
-					});
-
-			} else {
-				vscode.window
-					.showInformationMessage('Neon dreams is already enabled. Reload to refresh JS settings.', { title: "Restart editor to refresh settings" })
-					.then(function(msg) {
-						vscode.commands.executeCommand("workbench.action.reloadWindow");
-					});
-			}
-		} catch (e) {
-			if (/ENOENT|EACCES|EPERM/.test(e.code)) {
-				vscode.window.showInformationMessage("Neon Dreams was unable to modify the core VS code files needed to launch the extension. You may need to run VS code with admin privileges in order to enable Neon Dreams.");
-				return;
-			} else {
-				vscode.window.showErrorMessage('Something went wrong when starting neon dreams');
-				return;
-			}
-		}
-	});
-
-	let disable = vscode.commands.registerCommand('msdevtheme.disableNeon', uninstall);
-	
-	context.subscriptions.push(disposable);
-	context.subscriptions.push(disable);
+// امر مسح globalState
+vscode.commands.registerCommand('msdevtheme.resetState', async () => {
+    await context.globalState.update('msDevTheme.installedBefore', undefined);
+    await context.globalState.update('msDevTheme.lastVersionShown', undefined);
+    vscode.window.showInformationMessage('تمت إعادة تعيين حالة الإضافة.');
+});
 }
-exports.activate = activate;
 
-// this method is called when your extension is deactivated
 function deactivate() {
-	// ...
-}
-
-function uninstall() {
-	const appDir = path.dirname(vscode.env.appRoot);
-	const base = path.join(appDir, 'app', 'out', 'vs', 'code');
-	const electronBase = isVSCodeBelowVersion("1.70.0") ? "electron-browser" : "electron-sandbox";
-	const workBenchFilename = vscode.version == "1.94.0" ? "workbench.esm.html" : "workbench.html";
-
-	const htmlFile = path.join(base, electronBase, "workbench", workBenchFilename);
-
-	// modify workbench html
-	const html = fs.readFileSync(htmlFile, "utf-8");
-
-	// check if the tag is already there
-	const isEnabled = html.includes("neondreams.js");
-
-	if (isEnabled) {
-		// delete msdevtheme script tag if there
-		let output = html.replace(/^.*(<!-- MS Dev Theme --><script src="neondreams.js"><\/script><!-- NEON DREAMS -->).*\n?/mg, '');
-		fs.writeFileSync(htmlFile, output, "utf-8");
-
-		vscode.window
-			.showInformationMessage("Neon Dreams disabled. VS code must reload for this change to take effect", { title: "Restart editor to complete" })
-			.then(function(msg) {
-				vscode.commands.executeCommand("workbench.action.reloadWindow");
-			});
-	} else {
-		vscode.window.showInformationMessage('Neon dreams isn\'t running.');
-	}
-}
-
-// Returns true if the VS Code version running this extension is below the
-// version specified in the "version" parameter. Otherwise returns false.
-function isVSCodeBelowVersion(version) {
-	const vscodeVersion = vscode.version;
-	const vscodeVersionArray = vscodeVersion.split('.');
-	const versionArray = version.split('.');
-	
-	for (let i = 0; i < versionArray.length; i++) {
-		if (vscodeVersionArray[i] < versionArray[i]) {
-			return true;
-		}
-	}
-
-	return false;
+    // يمكن وضع كود التنظيف هنا إذا لزم الأمر
+    // على سبيل المثال، حذف الملفات المؤقتة (اختياري لأن VS Code قد يحذفها تلقائيًا)
+    // const tempThankYouPath = path.join(vscode.workspace.globalStorageUri.fsPath, 'ms_dev_theme_temp_THANK_YOU.md');
+    // const tempWhatsNewPath = path.join(vscode.workspace.globalStorageUri.fsPath, 'ms_dev_theme_temp_WHATS_NEW.md');
+    // try {
+    //     if (fs.existsSync(tempThankYouPath)) fs.unlinkSync(tempThankYouPath);
+    //     if (fs.existsSync(tempWhatsNewPath)) fs.unlinkSync(tempWhatsNewPath);
+    // } catch (err) {
+    //     console.error("MS Dev Theme: Error deleting temp files on deactivate:", err);
+    // }
 }
 
 module.exports = {
-	activate,
-	deactivate
-}
+    activate,
+    deactivate
+};

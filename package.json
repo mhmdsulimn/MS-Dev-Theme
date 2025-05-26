@@ -1,8 +1,8 @@
 {
 	"name": "msdev-vscode",
 	"displayName": "MS Dev Theme",
-	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman",
-	"version": "1.3.0",
+	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman - Dark & smoothing theme with high readability.",
+	"version": "1.3.1",
 	"author": "Mohamed Suliman",
 	"publisher": "mhmdsulimn",
 	"icon": "icon.png",
@@ -14,7 +14,8 @@
 		"vscode": "^1.33.0"
 	},
 	"extensionKind": [
-		"ui"
+		"ui",
+		"workspace" 
 	],
 	"keywords": [
 		"Mohamed Suliman",
@@ -28,8 +29,9 @@
 		"Themes"
 	],
 	"activationEvents": [
-		"onCommand:msdevtheme.enableNeon",
-		"onCommand:msdevtheme.disableNeon"
+		"onCommand:msdevtheme.showWhatsNew",
+		"onCommand:msdevtheme.showThankYouPage",
+		"onStartupFinished" 
 	],
 	"main": "./src/extension.js",
 	"browser": "./src/extension.js",
@@ -57,32 +59,24 @@
 		],
 		"commands": [
 			{
-				"command": "msdevtheme.enableNeon",
-				"title": "MS Dev Theme: Enable Neon Dreams"
+				"command": "msdevtheme.showWhatsNew",
+				"title": "MS Dev Theme: Show What's New"
 			},
 			{
-				"command": "msdevtheme.disableNeon",
-				"title": "MS Dev Theme: Disable Neon Dreams"
-			}
+                "command": "msdevtheme.showThankYouPage",
+                "title": "MS Dev Theme: Show Thank You Page"
+            },
+			{
+                "command": "msdevtheme.resetState",
+                "title": "MS Dev Theme: Reset State"
+            }
 		],
 		"configuration": {
-			"title": "MS Dev Theme",
-			"properties": {
-				"msdevtheme.brightness": {
-					"type": "number",
-					"default": 0.45,
-					"description": "Set the brightness value for the glow effect. 0.0 is fully transparent and 1.0 is fully bright"
-				},
-				"msdevtheme.disableGlow": {
-					"type": "boolean",
-					"default": false,
-					"description": "Disable the glow effect, but show MS Dev Theme editor chrome updates"
-				}
-			}
+			"title": "MS Dev Theme"
 		}
 	},
 	"__metadata": {
-		"installedTimestamp": 1741729120465,
-		"size": 754628
+		"installedTimestamp": 1741729120465, 
+		"size": 754628 
 	}
 }
