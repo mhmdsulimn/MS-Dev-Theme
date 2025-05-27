@@ -4,7 +4,7 @@
 
 If your eyes are exhausted from hours of coding and other themes just don't cut it — give this one a try. Your eyes will thank you later.
 
-<img src="https://img.shields.io/badge/v1.3.1-=?style=for-the-badge&colorA=222832&colorB=373277&label=version">
+<img src="https://img.shields.io/badge/v1.4.0-=?style=for-the-badge&colorA=222832&colorB=373277&label=version">
 
 <img src="https://img.shields.io/badge/v1.33+-=?style=for-the-badge&colorA=222832&colorB=373277&label=vscode">
 

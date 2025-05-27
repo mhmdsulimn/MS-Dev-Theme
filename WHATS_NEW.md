@@ -9,11 +9,9 @@
 Hello!  
 In this update, we added some cool stuff to make your coding experience smoother and easier on the eyes:
 
-- 🚧 This is an experimental version of the theme.
-- 📄 We're testing the welcome page that appears when installing or updating the theme.
-<!-- - 🎨 **New Theme:** MS Dev Dark Blue, a comfy dark blue color. -->
+- 🎨 **New Theme:** `Monokai`, a dark theme that's easy on the eyes.
 <!-- - 🔧 Improved color contrast in dark mode. -->
-<!-- - 🐞 Fixed color issues in JSON files. -->
+- 🐞 Fixed color issues in JSON files.
 
 ---
 
@@ -56,11 +54,9 @@ Also, join our YouTube or Telegram channels to suggest features you'd like to se
 أهلاً بيك!  
 في التحديث ده، أضفنا حاجات جديدة علشان نخلي تجربتك في البرمجة أحسن وأريح:
 
-● 🚧 دي نسخه تجريبيه من الثيم <br>
-● 📄 بنجرب فيها صفحه التحيه لما تنزل الثيم والصفحه لما تحدثه
-<!-- - 🎨 **ثيم جديد:** MS Dev Dark Blue، لون أزرق غامق مريح للعين. -->
-<!-- - 🔧 تحسينات في تباين الألوان في الوضع الداكن. -->
-<!-- - 🐞 إصلاح مشاكل في ألوان ملفات JSON. -->
+&emsp; ● 🎨 **ثيم جديد:** `Monokai`، ثيم داكن مريح للعين.
+<!-- &emsp; ● 🔧 تحسينات في تباين الألوان في الوضع الداكن. -->
+&emsp; ● 🐞 إصلاح مشاكل في ألوان ملفات JSON.
 
 ---
 
