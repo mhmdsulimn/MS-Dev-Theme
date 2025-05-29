@@ -4,7 +4,7 @@
 
 If your eyes are exhausted from hours of coding and other themes just don't cut it — give this one a try. Your eyes will thank you later.
 
-<img src="https://img.shields.io/badge/v1.4.0-=?style=for-the-badge&colorA=222832&colorB=373277&label=version">
+<img src="https://img.shields.io/badge/v1.5.0-=?style=for-the-badge&colorA=222832&colorB=373277&label=version">
 
 <img src="https://img.shields.io/badge/v1.33+-=?style=for-the-badge&colorA=222832&colorB=373277&label=vscode">
 
@@ -32,12 +32,14 @@ If your eyes are exhausted from hours of coding and other themes just don't cut 
 
 ## 📥 Installation
 
-1. Open the Extensions view in VS Code: `View → Extensions` or press `Ctrl+Shift+X`  
-2. Search for **MS Dev Theme** by **Mohamed Suliman**
-3.  Click the **Install** button 
-4. Open the Command Palette (`Ctrl+Shift+P`), type `Color Theme`, and select **MS Dev Theme**
-5. To enable the file icon theme, open the Command Palette (`Ctrl+Shift+P`), type `File Icon Theme`, and select **MS Dev Icons**
-6. To apply the product icon theme, open the Command Palette (`Ctrl+Shift+P`), type `Product Icon Theme`, and select **MS Dev Icons**
+**1.** Extensions ‣ Search for **_MS Dev Theme_** ‣ Install
+**2.** Command Palette ‣ **_MS Dev Theme_**: select theme
+
+**`Or`** Open (Ctrl+P), paste the following command, and press enter.
+
+```
+ext install mhmdsulimn.msdev-vscode
+```
 
 ---
 
@@ -45,7 +47,17 @@ If your eyes are exhausted from hours of coding and other themes just don't cut 
 
 > _Take a look at the theme in action:_
 
-![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/theme_preview.gif)  
+#### MS Dev Theme
+
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/ms_dev_theme_preview.png)
+
+#### Monokai Theme
+
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_theme_preview.png)
+
+#### Monokai Octagon
+
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_octagon_preview.png)
 
 > Or visit the **[official repository](https://github.com/mhmdsulimn/MS-Dev-Theme)** for more!
 
