@@ -32,8 +32,8 @@ If your eyes are exhausted from hours of coding and other themes just don't cut 
 
 ## 📥 Installation
 
-**1.** Extensions ‣ Search for **_MS Dev Theme_** ‣ Install
-**2.** Command Palette ‣ **_MS Dev Theme_**: select theme
+1. Extensions ‣ Search for **_MS Dev Theme_** ‣ Install
+2. Command Palette ‣ **_MS Dev Theme_**: select theme
 
 **`Or`** Open (Ctrl+P), paste the following command, and press enter.
 
@@ -47,17 +47,32 @@ ext install mhmdsulimn.msdev-vscode
 
 > _Take a look at the theme in action:_
 
-#### MS Dev Theme
+<br>
+
+<details>
+
+<summary><b>MS Dev Theme</b></summary>
 
 ![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/ms_dev_theme_preview.png)
 
-#### Monokai Theme
+</details>
+
+<details>
+
+<summary><b>Monokai Theme</b></summary>
 
 ![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_theme_preview.png)
 
-#### Monokai Octagon
+</details>
+
+<details>
+
+<summary><b>Monokai Octagon</b></summary>
 
 ![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_octagon_preview.png)
+</details>
+
+<br>
 
 > Or visit the **[official repository](https://github.com/mhmdsulimn/MS-Dev-Theme)** for more!
 
