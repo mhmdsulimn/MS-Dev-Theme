@@ -1,8 +1,8 @@
 {
 	"name": "msdev-vscode",
 	"displayName": "MS Dev Theme",
-	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman - Dark & smoothing theme with high readability.",
-	"version": "1.5.0",
+	"description": "🔥 MS Dev Theme for VS Code by Mohamed Suliman.",
+	"version": "1.6.0",
 	"author": "Mohamed Suliman",
 	"publisher": "mhmdsulimn",
 	"icon": "icon.png",
@@ -11,7 +11,7 @@
 		"url": "https://github.com/mhmdsulimn/MS-Dev-Theme"
 	},
 	"engines": {
-		"vscode": "^1.33.0"
+		"vscode": "^1.75.0"
 	},
 	"extensionKind": [
 		"ui",
@@ -20,14 +20,12 @@
 	"keywords": [
 		"mohamed suliman",
 		"mhmdsulimn",
-		"ms dev",
-		"ms",
 		"icon",
-		"icons",
 		"theme",
-		"themes",
-		"monokai",
-		"monokai octagon"
+		"dark theme",
+		"monokai theme",
+		"monokai octagon",
+		"cobalt theme"
 	],
 	"categories": [
 		"Themes"
@@ -55,6 +53,11 @@
 				"label": "Monokai Octagon",
 				"uiTheme": "vs-dark",
 				"path": "./themes/monokai-octagon.json"
+			},
+			{
+				"label": "Cobalt Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/cobalt-theme.json"
 			}
 		],
 		"iconThemes": [

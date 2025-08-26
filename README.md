@@ -4,15 +4,15 @@
 
 If your eyes are exhausted from hours of coding and other themes just don't cut it — give this one a try. Your eyes will thank you later.
 
-<img src="https://img.shields.io/badge/v1.5.0-=?style=for-the-badge&colorA=222832&colorB=373277&label=version">
+<!-- <img src="https://img.shields.io/badge/v1.5.0-=?style=for-the-badge&colorA=222832&colorB=373277&label=version"> -->
 
-<img src="https://img.shields.io/badge/v1.33+-=?style=for-the-badge&colorA=222832&colorB=373277&label=vscode">
+<img src="https://img.shields.io/badge/v1.75+-=?style=for-the-badge&colorA=222832&colorB=373277&label=vscode">
 
 <img src="https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/logo.png" width="28">
 
 <img src="https://img.shields.io/badge/Egypt-=?style=for-the-badge&colorA=222832&colorB=373277&label=made%20in">
 
-<img src="https://img.shields.io/visual-studio-marketplace/i/mhmdsulimn.msdev-vscode?style=for-the-badge&colorA=222832&colorB=373277">
+<!-- <img src="https://img.shields.io/visual-studio-marketplace/i/mhmdsulimn.msdev-vscode?style=for-the-badge&colorA=222832&colorB=373277"> -->
 
 </div>
 
@@ -53,7 +53,7 @@ ext install mhmdsulimn.msdev-vscode
 
 <summary><b>MS Dev Theme</b></summary>
 
-![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/ms_dev_theme_preview.png)
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/imgs/ms_dev_theme_preview.png)
 
 </details>
 
@@ -61,7 +61,7 @@ ext install mhmdsulimn.msdev-vscode
 
 <summary><b>Monokai Theme</b></summary>
 
-![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_theme_preview.png)
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/imgs/monokai_theme_preview.png)
 
 </details>
 
@@ -69,7 +69,14 @@ ext install mhmdsulimn.msdev-vscode
 
 <summary><b>Monokai Octagon</b></summary>
 
-![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/monokai_octagon_preview.png)
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/imgs/monokai_octagon_preview.png)
+</details>
+
+<details>
+
+<summary><b>Cobalt Theme</b></summary>
+
+![](https://raw.githubusercontent.com/mhmdsulimn/MS-Dev-Theme/refs/heads/main/imgs/cobalt_theme_preview.png)
 </details>
 
 <br>

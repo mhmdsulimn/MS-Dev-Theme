@@ -9,9 +9,9 @@
 Hello!  
 In this update, we added some cool stuff to make your coding experience smoother and easier on the eyes:
 
-- 🎨 **New Theme:** `Monokai Octagon`, a dark theme that's easy on the eyes.
+- 🎨 **New Theme:** `Cobalt Theme`, a dark theme that's easy on the eyes.
 <!-- - 🔧 Improved color contrast in dark mode. -->
-<!-- - 🐞 Fixed color issues in JSON files. -->
+- 🐞 Fixed color issues in JSON files.
 
 ---
 
@@ -54,9 +54,9 @@ Also, join our YouTube or Telegram channels to suggest features you'd like to se
 أهلاً بيك!  
 في التحديث ده، أضفنا حاجات جديدة علشان نخلي تجربتك في البرمجة أحسن وأريح:
 
-&emsp; ● 🎨 **ثيم جديد:** `Monokai Octagon`، ثيم داكن مريح للعين.
+&emsp; ● 🎨 **ثيم جديد:** `Cobalt Theme`، ثيم داكن مريح للعين.
 <!-- &emsp; ● 🔧 تحسينات في تباين الألوان في الوضع الداكن. -->
-<!-- &emsp; ● 🐞 إصلاح مشاكل في ألوان ملفات JSON. -->
+&emsp; ● 🐞 إصلاح مشاكل في ألوان ملفات JSON.
 
 ---
 
