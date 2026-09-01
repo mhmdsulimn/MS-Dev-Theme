@@ -127,8 +127,8 @@ Have suggestions, feedback, or spotted something to improve? I'd love to hear fr
   <a href="https://www.tiktok.com/@mhmdsulimn" target="_blank">
     <img src="https://img.shields.io/static/v1?message=TikTok&logo=tiktok&label=&color=252529&logoColor=white&labelColor=&style=for-the-badge" height="30" />
   </a>
-  <a href="https://t.me/mhmdsulimn" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Telegram&logo=telegram&label=&color=2CA5E0&logoColor=white&labelColor=&style=for-the-badge" height="30" />
+  <a href="https://www.linkedin.com/in/mhmdsulimn" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" height="30" alt="LinkedIn Logo" />
   </a>
   <a href="https://github.com/mhmdsulimn" target="_blank">
     <img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=252529&logoColor=white&labelColor=&style=for-the-badge" height="30" />
